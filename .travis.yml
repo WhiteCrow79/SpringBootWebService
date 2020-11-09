@@ -18,9 +18,9 @@ before_install:
 script: "./gradlew clean build"
 
 before_deploy:
-  - zip -r whitecrow-springboot-webservice *
+  - zip -r whitecrow-springboot-webservice ./*
   - mkdir -p deploy
-  - my whitecrow-springboot-webservice.zip deploy/whitecrow-springboot-webservice.zip
+  - mv whitecrow-springboot-webservice.zip deploy/whitecrow-springboot-webservice.zip
 
 deploy:
   - provider: s3
@@ -32,9 +32,7 @@ deploy:
     skip_cleanup: true
     acl: private
     local_dir: deploy
-    wait-until-deployed: true
-
-
+    wait_until_deployed: true
 
 # CI 실행 완료 시 메일로 알람
 notifications:
