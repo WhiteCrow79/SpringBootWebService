@@ -40,14 +40,11 @@ deploy:
 
     bucket: whitecrow-springboot-build
     key: whitecrow-springboot-webservice.zip
-
     bundle-type: zip
     application: whitecrow-springboot-webservice
     deployment_group: whitecrow-springboot-webservice-group
     region: ap-northeast-2
     wait_until_deployed: true
-
-
 
 # CI 실행 완료 시 메일로 알람
 notifications:
